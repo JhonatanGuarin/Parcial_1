@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include('./templates/header.ejs')%>
+        <title>Document</title>
+</head>
+
+<body>
+    <%-include('./templates/navigation.ejs')%>
+
+
+        <div class="container">
+            <h1>Lista de Productos</h1>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                        <th>Stock</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% Object.entries(products).forEach(([code, product])=> { %>
+                        <tr>
+                            <td>
+                                <%= code %>
+                            </td>
+                            <td>
+                                <%= product.description %>
+                            </td>
+                            <td>
+                                <%= product.stock %>
+                            </td>
+                            <td>
+                                <%= product.value %>
+                            </td>
+
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+
+</body>
+
+</html>
