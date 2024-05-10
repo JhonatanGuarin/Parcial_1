@@ -20,7 +20,7 @@ app.set('view engine', 'ejs')
 
 
 // Middlewares
-
+app.use(express.urlencoded({extended: false}))
 
 
 // Routes

@@ -12,22 +12,20 @@
     <div class="container p-4">
         <form method="POST" action="/sales" class="card card-body">
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPais" data-bs-toggle="dropdown" aria-expanded="false">
-                  Selecciona un producto para vender
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownPais">
-                  <% Object.entries(products).forEach(([code, product])=> { %>
-                    <a class="dropdown-item" href="#"><%= product.description %></a>
-                  <% }) %>
-                </div>
-            </div>
+
+            <label for="prodcuto">Selecciona una opción:</label>
+            <select class="form-select" name="producto" id="producto">
+                <% Object.entries(products).forEach(([code, product])=> { %>
+                <option value="<%= product.description %>"><%= product.description %></option>
+              <% }); %>
+            </select>
+            
             <div class="form-group">
                 <label for="autor">Cantidad</label>
-                <input type="text" class="form-control" name="cantidad" id="cantodad" placeholder="cantidad" required>    
+                <input type="text" class="form-control" name="cantidad" id="cantidad" placeholder="cantidad" required>    
             </div>
 
-            <input type="submit" value="Guardar Libro" class="btn btn-primary" >
+            <input type="submit" value="Agregar Compra" class="btn btn-primary" >
         </form>
     </div>
     
