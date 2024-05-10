@@ -12,4 +12,8 @@ router.get('/', (req, res) => {
     res.render('index.ejs', { products: data.products })
 })
 
+router.get('/sales', (req, res) =>{
+    res.render('sales.ejs', { products: data.products })
+})
+
 module.exports = router
